@@ -38,17 +38,21 @@ export const Footer = () => {
                 <a href="tel:945600676" className="text-slate-300 hover:text-amber-400 transition-colors">
                   945 600 676
                 </a>
+                /
+                <a href="tel:629125142" className="text-slate-300 hover:text-amber-400 transition-colors">
+                  629 125 142
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <a href="mailto:info@argomanizgarcia.com" className="text-slate-300 hover:text-amber-400 transition-colors">
-                  info@argomanizgarcia.com
+                <a href="mailto:info@ayg-asesores.com" className="text-slate-300 hover:text-amber-400 transition-colors">
+                  info@ayg-asesores.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-300">
-                  Lun - Vie: 9:00 - 14:00, 16:00 - 19:00
+                  Lun - Vie: 8:00 - 16:00
                 </span>
               </li>
             </ul>
@@ -95,6 +99,7 @@ export const Footer = () => {
               <li>Asesoramiento Contable</li>
               <li>Asesoramiento Legal</li>
               <li>Gestoría Administrativa</li>
+              <li>Informática</li>
             </ul>
           </div>
         </div>

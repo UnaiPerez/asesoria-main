@@ -46,6 +46,11 @@ export const QuienesSomos = () => {
       name: 'Área Legal',
       role: 'Especialista en Derecho Mercantil',
       description: 'Asesoramiento jurídico en constitución de empresas y derecho mercantil.'
+    },
+    {
+      name: 'Área Digital',
+      role: 'Especialista en Diseño Web',
+      description: 'Diseño de páginas web modernas para empresas y autónomos'
     }
   ];
 
@@ -164,7 +169,7 @@ export const QuienesSomos = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {team.map((member, index) => (
               <Card 
                 key={index} 

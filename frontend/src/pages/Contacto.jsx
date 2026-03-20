@@ -67,9 +67,14 @@ export const Contacto = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-900 mb-2">Teléfono</h3>
-                        <a href="tel:945600676" className="text-lg text-blue-600 hover:text-blue-700 font-semibold">
+                        <a href="tel:945600676" className="text-lg text-blue-600 hover:text-blue-700 font-semibold mr-[5px]">
                           945 600 676
                         </a>
+                        /
+                        <a href="tel:629125142" className="text-lg text-blue-600 hover:text-blue-700 font-semibold ml-[5px]">
+                          629 125 142
+                        </a>
+                        
                         <p className="text-sm text-slate-600 mt-1">
                           Llamadas de lunes a viernes
                         </p>
@@ -86,8 +91,8 @@ export const Contacto = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-900 mb-2">Email</h3>
-                        <a href="mailto:info@argomanizgarcia.com" className="text-lg text-emerald-600 hover:text-emerald-700 font-semibold">
-                          info@argomanizgarcia.com
+                        <a href="mailto:info@ayg-asesores.com" className="text-lg text-emerald-600 hover:text-emerald-700 font-semibold">
+                          info@ayg-asesores.com
                         </a>
                         <p className="text-sm text-slate-600 mt-1">
                           Respondemos en 24-48 horas
@@ -107,8 +112,7 @@ export const Contacto = () => {
                         <h3 className="font-bold text-slate-900 mb-2">Horario</h3>
                         <p className="text-slate-700">
                           <span className="font-semibold">Lunes a Viernes:</span><br />
-                          9:00 - 14:00<br />
-                          16:00 - 19:00
+                          8:00 - 16:00
                         </p>
                         <p className="text-sm text-slate-600 mt-2">
                           Posibilidad de cita previa
@@ -166,7 +170,7 @@ export const Contacto = () => {
                 Llamar Ahora
               </button>
             </a>
-            <a href="mailto:info@argomanizgarcia.com">
+            <a href="mailto:info@ayg-asesores.com">
               <button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
                 <Send className="w-5 h-5" />
                 Enviar Email

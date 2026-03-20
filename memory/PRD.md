@@ -5,7 +5,7 @@
 **Actividad:** Intermediación en asesoramiento fiscal, laboral, legal y contable, y gestoría administrativa  
 **Ubicación:** Calle Mayor 55, 1º, 01300 Laguardia, Álava  
 **Teléfono:** 945 600 676  
-**Email:** info@argomanizgarcia.com  
+**Email:** info@ayg-asesores.com  
 **Fundación:** 2013
 
 ## Arquitectura Técnica

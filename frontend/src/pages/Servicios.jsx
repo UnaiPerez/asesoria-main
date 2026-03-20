@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calculator, Users, FileText, Scale, Building, CheckCircle, ArrowRight } from 'lucide-react';
+import { Calculator, Users, FileText, Monitor, Scale, Building, CheckCircle, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Link } from 'react-router-dom';
@@ -41,6 +41,13 @@ export const Servicios = () => {
       subtitle: 'Trámites y gestiones administrativas',
       color: 'from-purple-500 to-purple-600',
       image: 'https://images.unsplash.com/photo-1758519288417-d359ac3c494d'
+    },
+    {
+      icon: Monitor,
+      title: 'Diseño Web',
+      subtitle:'Páginas web modernas para empresas y autónomos',
+      color:'from-red-500 to-red-600',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475'
     }
   ];
 
@@ -111,6 +118,17 @@ export const Servicios = () => {
         'Gestión de subvenciones y ayudas',
         'Tramitación de licencias de actividad',
         'Representación ante las administraciones'
+      ]
+    },
+    {
+      area: 'Diseño Web y Servicios Digitales',
+      servicios: [
+        'Diseño y desarrollo de páginas web profesionales',
+        'Creación de webs para empresas y autónomos',
+        'Diseño responsive adaptado a móviles y tablets',
+        'Mantenimiento y actualización de páginas web',
+        'Creación de landing pages y páginas de captación',
+        'Integración de formularios de contacto y herramientas digitales'
       ]
     }
   ];

@@ -37,9 +37,13 @@ export const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline">945 600 676</span>
             </a>
-            <a href="mailto:info@argomanizgarcia.com" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
+            /
+            <a href="tel:629125142" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
+              <span className="hidden sm:inline">629 125 142</span>
+            </a>
+            <a href="mailto:info@ayg-asesores.com" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Mail className="w-4 h-4" />
-              <span className="hidden md:inline">info@argomanizgarcia.com</span>
+              <span className="hidden md:inline">info@ayg-asesores.com</span>
             </a>
           </div>
           <div className="text-xs hidden lg:block">
