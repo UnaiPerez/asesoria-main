@@ -169,12 +169,13 @@ export const QuienesSomos = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="flex flex-wrap justify-center gap-10">
             {team.map((member, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-xl transition-all duration-300 border-2 border-slate-100 hover:border-amber-400"
-              >
+                className={"w-full md:w-[45%] lg:w-[30%] group hover:shadow-xl transition-all duration-300 border-2 border-slate-100 hover:border-amber-400"
+                  }
+                >
                 <CardContent className="p-6 text-center">
                   <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-10 h-10 text-white" />
