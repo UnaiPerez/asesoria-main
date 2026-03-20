@@ -95,7 +95,7 @@ export const Contacto = () => {
                           info@ayg-asesores.com
                         </a>
                         <p className="text-sm text-slate-600 mt-1">
-                          Respondemos en 24-48 horas
+                          Respondemos en menos de 24 horas
                         </p>
                       </div>
                     </div>
