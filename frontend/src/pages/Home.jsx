@@ -33,13 +33,13 @@ export const Home = () => {
     {
       icon: Building,
       title: 'Gestion Administrativa',
-      description: 'Tramites con Hacienda, Gestiones con la Seguridad Social',
+      description: 'Trámites con Hacienda, Gestiones con la Seguridad Social',
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: Monitor,
       title: 'Diseño Web',
-      description: 'Diseño y desarrollo de paginas web modernas, adaptados a moviles y tablets',
+      description: 'Diseño y desarrollo de páginas web modernas, adaptados a móviles y tablets',
       color: 'from-red-500 to-red-600'
     }
   ];
