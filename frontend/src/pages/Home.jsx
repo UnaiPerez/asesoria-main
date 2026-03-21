@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Users, FileText, Calculator, Scale, Building, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, FileText, Calculator, Scale, Building, Monitor, Award, TrendingUp } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
@@ -29,6 +29,18 @@ export const Home = () => {
       title: 'Asesoramiento Legal',
       description: 'Constitución de sociedades, contratos mercantiles y asesoramiento jurídico.',
       color: 'from-emerald-500 to-emerald-600'
+    },
+    {
+      icon: Building,
+      title: 'Gestion Administrativa',
+      description: 'Tramites con Hacienda, Gestiones con la Seguridad Social',
+      color: 'from-purple-500 to-purple-600'
+    },
+    {
+      icon: Monitor,
+      title: 'Diseño Web',
+      description: 'Diseño y desarrollo de paginas web modernas, adaptados a moviles y tablets',
+      color: 'from-red-500 to-red-600'
     }
   ];
 
@@ -44,7 +56,7 @@ export const Home = () => {
   const stats = [
     { number: '10+', label: 'Años de Experiencia' },
     { number: '200+', label: 'Clientes Satisfechos' },
-    { number: '4', label: 'Áreas Especializadas' },
+    { number: '6', label: 'Áreas Especializadas' },
     { number: '100%', label: 'Compromiso' }
   ];
 
