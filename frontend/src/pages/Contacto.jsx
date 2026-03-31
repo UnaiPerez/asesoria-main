@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CalendarClock  } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 
 export const Contacto = () => {
@@ -174,6 +174,12 @@ export const Contacto = () => {
               <button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
                 <Send className="w-5 h-5" />
                 Enviar Email
+              </button>
+            </a>
+            <a href="https://confirmafy.com/argomanizygarcia">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+                <CalendarClock  className="w-5 h-5" />
+                Coge tu cita
               </button>
             </a>
           </div>

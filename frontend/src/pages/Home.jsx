@@ -97,6 +97,11 @@ export const Home = () => {
                   Ver Servicios
                 </Button>
               </Link>
+              <Link to="https://confirmafy.com/argomanizygarcia">
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+                  Pide tu cita
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -234,7 +239,7 @@ export const Home = () => {
           </p>
           <Link to="/contacto">
             <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-7 text-xl font-bold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
-              Pide tu Cita
+              Contáctanos
               <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
           </Link>
