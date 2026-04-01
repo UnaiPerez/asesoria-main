@@ -182,6 +182,11 @@ export const Contacto = () => {
                 Coge tu cita
               </button>
             </a>
+            <img 
+              src="/qr.png" 
+              alt="Argomaniz y Garcia" 
+              className="h-16 w-auto mb-4 max-sm:h-40 max-sm:w-40"
+            />
           </div>
         </div>
       </section>
