@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Users, FileText, Calculator, Scale, Building, Monitor, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, FileText, Calculator, Scale, Building, Monitor, Award, TrendingUp, Truck, CalendarClock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
@@ -41,6 +41,13 @@ export const Home = () => {
       title: 'Diseño Web',
       description: 'Diseño y desarrollo de páginas web modernas, adaptados a móviles y tablets',
       color: 'from-red-500 to-red-600'
+    },
+    {
+      icon: Truck,
+      title: 'DeCA Transporte',
+      description: 'El documento de control del transporte, obligatoriamente digital desde el 5 de octubre de 2026.',
+      color: 'from-amber-500 to-amber-600',
+      to: '/deca'
     }
   ];
 
@@ -63,11 +70,14 @@ export const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* 88vh y no la pantalla entera: así asoma el aviso del DeCA por abajo
+          y se ve que hay algo más. Con h-screen quedaba justo en el pliegue,
+          invisible para quien no baje. */}
+      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden py-24">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1758519288417-d359ac3c494d" 
+            src="/fotos/photo-1758519288417-d359ac3c494d.webp" 
             alt="Asesoría profesional"
             className="w-full h-full object-cover"
           />
@@ -112,6 +122,31 @@ export const Home = () => {
             <div className="w-1 h-3 bg-white rounded-full"></div>
           </div>
         </div>
+      </section>
+
+      {/* Aviso del DeCA. Va aquí arriba y no como una tarjeta más porque es un
+          aviso con fecha de caducidad: el 5 de octubre de 2026. Cuando pase,
+          se quita de aquí y se queda solo la tarjeta de servicio. */}
+      <section className="bg-amber-500">
+        <Link
+          to="/deca"
+          className="block max-w-7xl mx-auto px-4 py-5 group"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+            <div className="flex-none w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center">
+              <CalendarClock className="w-6 h-6 text-amber-400" />
+            </div>
+            <p className="flex-1 text-slate-900 text-base md:text-lg leading-snug">
+              <strong className="font-bold">Transportistas: desde el 5 de octubre de 2026,
+              el documento de control va obligatoriamente en digital.</strong>{' '}
+              Te explicamos qué cambia y cómo cumplirlo.
+            </p>
+            <span className="flex-none inline-flex items-center gap-2 font-bold text-slate-900 group-hover:gap-3 transition-all">
+              Más información
+              <ArrowRight className="w-5 h-5" />
+            </span>
+          </div>
+        </Link>
       </section>
 
       {/* Stats Section */}
@@ -161,8 +196,9 @@ export const Home = () => {
                   <p className="text-slate-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <Link 
-                    to="/servicios" 
+                  <Link
+                    /* El DeCA tiene página propia; el resto van al listado. */
+                    to={service.to ?? '/servicios'}
                     className="inline-flex items-center text-amber-600 font-semibold hover:gap-3 gap-2 transition-all"
                   >
                     Más información
@@ -179,7 +215,7 @@ export const Home = () => {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
           <img 
-            src="https://images.unsplash.com/photo-1721831394872-949dea2b5c04" 
+            src="/fotos/photo-1721831394872-949dea2b5c04.webp" 
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -206,7 +242,7 @@ export const Home = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494" 
+                src="/fotos/photo-1765020553734-2c050ddb9494.webp" 
                 alt="Equipo profesional"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
@@ -224,7 +260,7 @@ export const Home = () => {
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
-            src="https://images.unsplash.com/photo-1724693880256-5fca93912c32" 
+            src="/fotos/photo-1724693880256-5fca93912c32.webp" 
             alt="Rioja Alavesa"
             className="w-full h-full object-cover"
           />

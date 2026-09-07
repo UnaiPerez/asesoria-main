@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calculator, Users, FileText, Monitor, Scale, Building, CheckCircle, ArrowRight } from 'lucide-react';
+import { Calculator, Users, FileText, Monitor, Scale, Building, CheckCircle, ArrowRight, Truck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Link } from 'react-router-dom';
@@ -12,42 +12,50 @@ export const Servicios = () => {
       title: 'Asesoramiento Fiscal',
       subtitle: 'Optimización tributaria y cumplimiento fiscal',
       color: 'from-blue-500 to-blue-600',
-      image: 'https://images.unsplash.com/photo-1562564055-71e051d33c19'
+      image: '/fotos/photo-1562564055-71e051d33c19.webp'
     },
     {
       icon: Users,
       title: 'Asesoramiento Laboral',
       subtitle: 'Gestión integral de recursos humanos',
       color: 'from-amber-500 to-amber-600',
-      image: 'https://images.unsplash.com/photo-1758519288417-d359ac3c494d'
+      image: '/fotos/photo-1758519288417-d359ac3c494d.webp'
     },
     {
       icon: FileText,
       title: 'Asesoramiento Contable',
       subtitle: 'Contabilidad y gestión financiera',
       color: 'from-slate-500 to-slate-600',
-      image: 'https://images.unsplash.com/photo-1765020553734-2c050ddb9494'
+      image: '/fotos/photo-1765020553734-2c050ddb9494.webp'
     },
     {
       icon: Scale,
       title: 'Asesoramiento Legal',
       subtitle: 'Asesoría jurídica mercantil',
       color: 'from-emerald-500 to-emerald-600',
-      image: 'https://images.unsplash.com/photo-1562564055-71e051d33c19'
+      image: '/fotos/photo-1562564055-71e051d33c19.webp'
     },
     {
       icon: Building,
       title: 'Gestoría Administrativa',
       subtitle: 'Trámites y gestiones administrativas',
       color: 'from-purple-500 to-purple-600',
-      image: 'https://images.unsplash.com/photo-1758519288417-d359ac3c494d'
+      image: '/fotos/photo-1758519288417-d359ac3c494d.webp'
     },
     {
       icon: Monitor,
       title: 'Diseño Web',
       subtitle:'Páginas web modernas para empresas y autónomos',
       color:'from-red-500 to-red-600',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475'
+      image: '/fotos/photo-1518770660439-4636190af475.webp'
+    },
+    {
+      icon: Truck,
+      title: 'DeCA Transporte',
+      subtitle: 'El documento de control, obligatoriamente digital desde el 5 de octubre de 2026',
+      color: 'from-amber-500 to-amber-600',
+      image: '/fotos/deca-carretera.webp',
+      to: '/deca'
     }
   ];
 
@@ -130,6 +138,17 @@ export const Servicios = () => {
         'Creación de landing pages y páginas de captación',
         'Integración de formularios de contacto y herramientas digitales'
       ]
+    },
+    {
+      area: 'DeCA Transporte',
+      servicios: [
+        'Documento electrónico de control administrativo, obligatorio desde el 5 de octubre de 2026',
+        'Aplicación propia para generar los documentos con su código QR',
+        'Entrega al conductor por WhatsApp, para que lo lleve en el móvil',
+        'Corrección de datos en ruta sin cambiar el código QR',
+        'Histórico de todos los documentos emitidos y copia de seguridad descargable',
+        'Te decimos si la obligación te afecta y desde cuándo'
+      ]
     }
   ];
 
@@ -139,7 +158,7 @@ export const Servicios = () => {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1562564055-71e051d33c19" 
+            src="/fotos/photo-1562564055-71e051d33c19.webp" 
             alt="Servicios profesionales"
             className="w-full h-full object-cover"
           />
@@ -192,6 +211,17 @@ export const Servicios = () => {
                   <p className="text-slate-600 mb-4">
                     {service.subtitle}
                   </p>
+                  {/* Solo el DeCA tiene página propia; el resto se explican
+                      abajo, en el desplegable. */}
+                  {service.to && (
+                    <Link
+                      to={service.to}
+                      className="inline-flex items-center text-amber-600 font-semibold hover:gap-3 gap-2 transition-all"
+                    >
+                      Más información
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}

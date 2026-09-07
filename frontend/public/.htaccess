@@ -1,0 +1,43 @@
+# Hace que todas las direcciones las atienda index.html.
+#
+# La web es una aplicación de React con react-router: las páginas no existen
+# como ficheros en el servidor, las dibuja el navegador. Sin esto, entrar
+# directamente a /servicios —o recargar estando allí, o llegar desde Google, o
+# abrir un enlace compartido por WhatsApp— devuelve un "404 Not Found" de
+# Apache. Comprobado el 5 de septiembre de 2026: pasaba en todas las secciones
+# menos en la portada.
+#
+# Va en public/ para que `npm run build` lo copie a build/ y suba por FTP con
+# el resto. Si algún día desaparece, vuelven los 404.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Los ficheros y carpetas que sí existen se sirven tal cual: el JavaScript,
+  # los estilos, las imágenes y el robots.txt no pasan por aquí.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Todo lo demás lo atiende la aplicación.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Los ficheros con huella en el nombre (main.a1b2c3.js) no cambian nunca: se
+# pueden guardar mucho tiempo. El index.html no, o la gente seguiría viendo la
+# web vieja después de subir una nueva.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

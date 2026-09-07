@@ -73,6 +73,11 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/deca" className="text-slate-300 hover:text-amber-400 transition-colors">
+                  DeCA Transporte
+                </Link>
+              </li>
+              <li>
                 <Link to="/servicios" className="text-slate-300 hover:text-amber-400 transition-colors">
                   Servicios
                 </Link>

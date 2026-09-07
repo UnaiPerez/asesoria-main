@@ -66,7 +66,7 @@ export const Clientes = () => {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1660815312830-7cb4e23547a8" 
+            src="/fotos/photo-1660815312830-7cb4e23547a8.webp" 
             alt="Nuestros clientes"
             className="w-full h-full object-cover"
           />
@@ -175,7 +175,7 @@ export const Clientes = () => {
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1724693880256-5fca93912c32" 
+            src="/fotos/photo-1724693880256-5fca93912c32.webp" 
             alt="Rioja Alavesa"
             className="w-full h-full object-cover"
           />

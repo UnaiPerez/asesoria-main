@@ -9,7 +9,7 @@ export const Contacto = () => {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494" 
+            src="/fotos/photo-1765020553734-2c050ddb9494.webp" 
             alt="Contacto"
             className="w-full h-full object-cover"
           />

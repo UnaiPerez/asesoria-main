@@ -19,6 +19,8 @@ export const Header = () => {
     { path: '/', label: 'Inicio' },
     { path: '/quienes-somos', label: 'Quiénes Somos' },
     { path: '/servicios', label: 'Servicios' },
+    // «DeCA» a secas no lo entiende quien no sea del sector.
+    { path: '/deca', label: 'DeCA Transporte' },
     { path: '/clientes', label: 'Clientes' },
     { path: '/contacto', label: 'Contacto' }
   ];

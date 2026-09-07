@@ -60,7 +60,7 @@ export const QuienesSomos = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494" 
+            src="/fotos/photo-1765020553734-2c050ddb9494.webp" 
             alt="Nuestro equipo"
             className="w-full h-full object-cover"
           />
@@ -109,7 +109,7 @@ export const QuienesSomos = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1721831394872-949dea2b5c04" 
+                src="/fotos/photo-1721831394872-949dea2b5c04.webp" 
                 alt="Laguardia"
                 className="rounded-2xl shadow-2xl w-full"
               />
@@ -200,7 +200,7 @@ export const QuienesSomos = () => {
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
-            src="https://images.unsplash.com/photo-1660815312830-7cb4e23547a8" 
+            src="/fotos/photo-1660815312830-7cb4e23547a8.webp" 
             alt="Background"
             className="w-full h-full object-cover"
           />
