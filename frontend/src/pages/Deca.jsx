@@ -210,12 +210,12 @@ export const Deca = () => {
 
           {/* La marca se nombra una sola vez y subordinada a la asesoría: la
               confianza del lector viene de «lo ha hecho mi asesoría», no de un
-              nombre que no ha oído nunca. Sin enlace todavía, porque el dominio
-              transgap.es aún no resuelve; publicar un enlace muerto en la web de
-              una empresa es peor que no ponerlo. */}
+              nombre que no ha oído nunca. Con enlace desde el 7 de octubre de
+              2026, cuando transgap.es ya llevaba un mes en marcha. */}
           <p className="text-xl text-slate-200 leading-relaxed mb-10 max-w-3xl">
             En Argomaniz y García, a través de nuestro departamento informático, hemos
-            desarrollado nuestra propia aplicación, <strong className="text-white font-semibold">TransGap</strong>,
+            desarrollado nuestra propia aplicación,{' '}
+            <a href="https://transgap.es" className="text-white font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-300">TransGap</a>,
             para generar y gestionar estos documentos electrónicos. La usan nuestros
             clientes de transporte y está disponible para cualquier empresa que la
             necesite.
@@ -233,6 +233,15 @@ export const Deca = () => {
               </div>
             ))}
           </div>
+
+          {/* Para quien ya tiene cuenta. Discreto a propósito: el botón de esta
+              sección es escribirnos, no entrar. */}
+          <p className="-mt-6 mb-12">
+            <a href="https://transgap.es" className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-semibold underline-offset-4 hover:underline">
+              ¿Ya eres cliente? Entra en TransGap
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </p>
 
           <p className="text-lg text-slate-300 mb-8 max-w-3xl">
             Escríbenos y te explicamos cómo funciona, qué cuesta y cómo lo gestionamos
