@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Las secciones de App.js. Si se añade una, va aquí y en el .htaccess. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.ayg-asesores.com/</loc></url>
+  <url><loc>https://www.ayg-asesores.com/servicios</loc></url>
+  <url><loc>https://www.ayg-asesores.com/deca/</loc></url>
+  <url><loc>https://www.ayg-asesores.com/quienes-somos</loc></url>
+  <url><loc>https://www.ayg-asesores.com/clientes</loc></url>
+  <url><loc>https://www.ayg-asesores.com/contacto</loc></url>
+</urlset>

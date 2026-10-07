@@ -106,8 +106,8 @@ export const Deca = () => {
               control para el transporte público de mercancías por carretera en España.
             </p>
             <p>
-              Amparado por la Ley de Movilidad Sostenible, pasa a ser obligatorio a partir
-              del <strong className="text-slate-900">5 de octubre de 2026</strong> para las
+              Amparado por la Ley de Movilidad Sostenible, es obligatorio desde
+              el <strong className="text-slate-900">5 de octubre de 2026</strong> para las
               operaciones nacionales y de cabotaje en territorio español. El documento deja
               de emitirse en papel: nace digital.
             </p>
@@ -177,7 +177,7 @@ export const Deca = () => {
       {/* ------------------------------------------------------ la infracción */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="flex gap-6 items-start bg-slate-50 border-l-4 border-slate-900 p-8 rounded-r-2xl">
+          <div className="flex gap-6 items-start bg-slate-50 border border-slate-200 p-8 rounded-2xl">
             <AlertTriangle className="w-8 h-8 text-slate-900 flex-none mt-1" />
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">
@@ -186,7 +186,7 @@ export const Deca = () => {
               <p className="text-lg text-slate-600 leading-relaxed">
                 No llevar a bordo el documento de control debidamente cumplimentado es una
                 infracción en materia de transporte. Si tienes dudas sobre cómo te afecta a
-                ti o a tus conductores, consúltanos antes del 5 de octubre.
+                ti o a tus conductores, consúltanos.
               </p>
             </div>
           </div>

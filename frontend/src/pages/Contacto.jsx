@@ -133,7 +133,10 @@ export const Contacto = () => {
                 <CardContent className="p-0">
                   <div className="w-full h-[600px]">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.5!2d-2.5858!3d42.5558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDMzJzIwLjkiTiAywrAzNScwOC45Ilc!5e0!3m2!1ses!2ses!4v1234567890"
+                      // Búsqueda por la dirección, no por coordenadas: el mapa
+                      // anterior llevaba un identificador inventado por la
+                      // plantilla. Esta forma no necesita clave de Google.
+                      src="https://www.google.com/maps?q=Calle+Mayor+55,+01300+Laguardia,+%C3%81lava&z=17&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}

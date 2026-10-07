@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          "src/pages/Deca.jsx"
+        ],
+        "createdAt": "2026-10-07T11:22:57.453Z",
+        "reason": "Claude: text-slate-900 (#0f172a) sobre amber-500 es casi negro sobre ámbar, contraste ~9:1; no es gris lavado"
+      }
+    ]
+  }
+}

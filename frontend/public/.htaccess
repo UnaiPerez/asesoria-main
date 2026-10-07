@@ -14,14 +14,39 @@
   RewriteEngine On
   RewriteBase /
 
+  # Una sola dirección: https://www.ayg-asesores.com. Hasta el 7 de octubre de
+  # 2026 la web contestaba igual por http, por https y con y sin www: para
+  # Google eran tres webs copiadas, y quien entraba por http iba sin cifrar.
+  # La segunda condición evita un bucle si algún día el hosting pone un proxy
+  # delante que hable con Apache por http.
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.ayg-asesores.com%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://www.ayg-asesores.com%{REQUEST_URI} [R=301,L]
+
   # Los ficheros y carpetas que sí existen se sirven tal cual: el JavaScript,
   # los estilos, las imágenes y el robots.txt no pasan por aquí.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Todo lo demás lo atiende la aplicación.
-  RewriteRule ^ index.html [L]
+  # Las secciones de la web las atiende la aplicación. Van con nombre, y no
+  # «todo lo demás», para que una dirección inventada dé un 404 de verdad:
+  # antes contestaba «200 OK» a cualquier cosa y Google podía indexar basura.
+  # Una sección nueva en App.js tiene que añadirse aquí, o dará 404.
+  RewriteRule ^(quienes-somos|servicios|clientes|contacto)/?$ index.html [L]
+</IfModule>
+
+# Lo que no existe recibe la aplicación con código 404: el navegador pinta la
+# página «Esta página no existe» (NoEncontrado.jsx) y Google sabe que no hay
+# nada que indexar.
+ErrorDocument 404 /index.html
+
+# Comprimir el texto. El JavaScript pesa 355 KB y viajaba tal cual; comprimido
+# se queda en un tercio, que en el móvil se nota.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
 # Los ficheros con huella en el nombre (main.a1b2c3.js) no cambian nunca: se
@@ -31,9 +56,11 @@
   ExpiresActive On
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
 </IfModule>
 
 <IfModule mod_headers.c>
