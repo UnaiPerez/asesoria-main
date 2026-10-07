@@ -11,49 +11,42 @@ export const Servicios = () => {
       icon: Calculator,
       title: 'Asesoramiento Fiscal',
       subtitle: 'Optimización tributaria y cumplimiento fiscal',
-      color: 'from-blue-500 to-blue-600',
       image: '/fotos/photo-1562564055-71e051d33c19.webp'
     },
     {
       icon: Users,
       title: 'Asesoramiento Laboral',
       subtitle: 'Gestión integral de recursos humanos',
-      color: 'from-amber-500 to-amber-600',
       image: '/fotos/photo-1758519288417-d359ac3c494d.webp'
     },
     {
       icon: FileText,
       title: 'Asesoramiento Contable',
       subtitle: 'Contabilidad y gestión financiera',
-      color: 'from-slate-500 to-slate-600',
       image: '/fotos/photo-1765020553734-2c050ddb9494.webp'
     },
     {
       icon: Scale,
       title: 'Asesoramiento Legal',
       subtitle: 'Asesoría jurídica mercantil',
-      color: 'from-emerald-500 to-emerald-600',
       image: '/fotos/photo-1562564055-71e051d33c19.webp'
     },
     {
       icon: Building,
       title: 'Gestoría Administrativa',
       subtitle: 'Trámites y gestiones administrativas',
-      color: 'from-purple-500 to-purple-600',
       image: '/fotos/photo-1758519288417-d359ac3c494d.webp'
     },
     {
       icon: Monitor,
       title: 'Diseño Web',
       subtitle:'Páginas web modernas para empresas y autónomos',
-      color:'from-red-500 to-red-600',
       image: '/fotos/photo-1518770660439-4636190af475.webp'
     },
     {
       icon: Truck,
       title: 'DeCA Transporte',
       subtitle: 'El documento de control, obligatoriamente digital desde el 5 de octubre de 2026',
-      color: 'from-amber-500 to-amber-600',
       image: '/fotos/deca-carretera.webp',
       to: '/deca'
     }
@@ -191,15 +184,15 @@ export const Servicios = () => {
             {mainServices.map((service, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2"
+                className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80`}></div>
+                  <div className={`absolute inset-0 bg-slate-900/70`}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <service.icon className="w-16 h-16 text-white" />
                   </div>
@@ -255,7 +248,7 @@ export const Servicios = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {area.servicios.map((servicio, idx) => (
                       <div key={idx} className="flex items-start gap-3 group">
-                        <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-700">{servicio}</span>
                       </div>
                     ))}
@@ -277,7 +270,7 @@ export const Servicios = () => {
             Contacta con nosotros y te asesoraremos sin compromiso sobre el servicio que mejor se adapte a tus necesidades.
           </p>
           <Link to="/contacto">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-6 text-lg font-bold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-6 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300">
               Contactar Ahora
               <ArrowRight className="ml-3 w-5 h-5" />
             </Button>

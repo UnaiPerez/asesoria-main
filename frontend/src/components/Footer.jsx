@@ -4,7 +4,9 @@ import { Phone, Mail, MapPin, Clock, Facebook, Linkedin, Twitter } from 'lucide-
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white">
+    // pb-20 en el móvil: hueco para el botón flotante de WhatsApp, que si no
+    // tapa la última línea del pie.
+    <footer className="bg-slate-900 text-white pb-20 md:pb-0">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

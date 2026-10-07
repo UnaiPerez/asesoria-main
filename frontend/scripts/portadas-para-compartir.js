@@ -10,8 +10,9 @@
  * página cuyo único propósito es mandarse por WhatsApp, eso se carga el trabajo.
  *
  * La solución: después de compilar, se copia el `index.html` a
- * `build/deca/index.html` cambiándole las etiquetas. Como el `.htaccess` sirve
- * primero los ficheros que existen de verdad, quien entre a /deca recibe esa
+ * `build/deca.html` (y lo mismo con cada sección de src/paginas.json)
+ * cambiándole las etiquetas. Como el `.htaccess` sirve /deca desde ese
+ * fichero, quien entre a /deca recibe esa
  * copia —con las etiquetas correctas para la vista previa— y dentro arranca la
  * misma aplicación de siempre, que pinta la página del DeCA. Nadie nota nada.
  *
@@ -28,17 +29,11 @@ const path = require('path');
 const BUILD = path.join(__dirname, '..', 'build');
 const DOMINIO = 'https://www.ayg-asesores.com';
 
-const PAGINAS = [
-  {
-    ruta: 'deca',
-    titulo: 'El documento de control del transporte pasa a ser digital | Argomaniz y García',
-    descripcion:
-      'Desde el 5 de octubre de 2026 hay que llevar a bordo el documento de control ' +
-      'administrativo (DeCA) en formato electrónico. Te explicamos qué cambia, cómo se ' +
-      'controla en carretera y cómo cumplirlo.',
-    imagen: '/fotos/deca-carretera.webp',
-  },
-];
+// Los textos viven en src/paginas.json, que también usa la aplicación para el
+// título de la pestaña al navegar: así no pueden desincronizarse.
+const { paginas } = require('../src/paginas.json');
+const PORTADA = paginas.find((p) => p.ruta === '');
+const PAGINAS = paginas.filter((p) => p.ruta !== '');
 
 /**
  * Cambia una etiqueta si ya existe, y la añade al <head> si no.
@@ -69,7 +64,7 @@ for (const p of PAGINAS) {
   // suyas: WhatsApp y Facebook las og:, y X las twitter:.
   const cambios = [
     ['name', 'description', `<meta name="description" content="${p.descripcion}"/>`],
-    ['property', 'og:type', `<meta property="og:type" content="article"/>`],
+    ['property', 'og:type', `<meta property="og:type" content="${p.tipo || 'website'}"/>`],
     ['property', 'og:site_name', `<meta property="og:site_name" content="Argomaniz y García Asesores"/>`],
     ['property', 'og:locale', `<meta property="og:locale" content="es_ES"/>`],
     ['property', 'og:title', `<meta property="og:title" content="${p.titulo}"/>`],
@@ -88,8 +83,16 @@ for (const p of PAGINAS) {
   }
   html = html.replace('</head>', `  <link rel="canonical" href="${DOMINIO}/${p.ruta}"/>\n  </head>`);
 
-  const carpeta = path.join(BUILD, p.ruta);
-  fs.mkdirSync(carpeta, { recursive: true });
-  fs.writeFileSync(path.join(carpeta, 'index.html'), html);
+  // Un fichero `servicios.html`, no una carpeta `servicios/index.html`: con
+  // carpeta, Apache manda /servicios a /servicios/ y cada página tendría dos
+  // direcciones. El .htaccess sirve /servicios desde este fichero.
+  fs.writeFileSync(path.join(BUILD, `${p.ruta}.html`), html);
   console.log(`  /${p.ruta}  portada propia con vista previa`);
 }
+
+// La portada: su canónica. El resto de sus etiquetas ya vienen en public/index.html.
+fs.writeFileSync(
+  path.join(BUILD, 'index.html'),
+  original.replace('</head>', `  <link rel="canonical" href="${DOMINIO}/"/>\n  </head>`)
+);
+console.log(`  /  canónica de la portada (${PORTADA.titulo})`);

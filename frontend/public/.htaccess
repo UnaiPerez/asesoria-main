@@ -25,17 +25,25 @@
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^ https://www.ayg-asesores.com%{REQUEST_URI} [R=301,L]
 
+  # Cada sección tiene su propio .html con su título y su descripción para
+  # Google y WhatsApp (los genera scripts/portadas-para-compartir.js a partir de
+  # src/paginas.json). Con y sin barra al final se sirve lo mismo, y la
+  # etiqueta canónica le dice a Google cuál es la buena. No se redirige la
+  # barra a propósito: si en el servidor queda una carpeta con el mismo nombre
+  # (la vieja deca/), Apache añade la barra por su cuenta y las dos
+  # redirecciones se perseguirían en bucle. Probado con Docker el 7 de octubre
+  # de 2026. Una sección nueva en App.js tiene que añadirse aquí, o dará 404.
+  RewriteRule ^(quienes-somos|servicios|clientes|contacto|deca)/?$ $1.html [L]
+
   # Los ficheros y carpetas que sí existen se sirven tal cual: el JavaScript,
   # los estilos, las imágenes y el robots.txt no pasan por aquí.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Las secciones de la web las atiende la aplicación. Van con nombre, y no
-  # «todo lo demás», para que una dirección inventada dé un 404 de verdad:
-  # antes contestaba «200 OK» a cualquier cosa y Google podía indexar basura.
-  # Una sección nueva en App.js tiene que añadirse aquí, o dará 404.
-  RewriteRule ^(quienes-somos|servicios|clientes|contacto)/?$ index.html [L]
+  # Nada más: lo que no es una sección ni un fichero da un 404 de verdad (ver
+  # ErrorDocument abajo). Antes contestaba «200 OK» a cualquier cosa y Google
+  # podía indexar basura.
 </IfModule>
 
 # Lo que no existe recibe la aplicación con código 404: el navegador pinta la

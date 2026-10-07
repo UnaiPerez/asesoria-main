@@ -1,0 +1,41 @@
+{
+  "_nota": "Título y descripción de cada sección, para Google, WhatsApp y la pestaña del navegador. Lo leen scripts/portadas-para-compartir.js al compilar y components/TituloDePagina.jsx al navegar. Una sección nueva va aquí, en App.js, en el .htaccess y en el sitemap.",
+  "paginas": [
+    {
+      "ruta": "",
+      "titulo": "Asesoría en Laguardia (Álava) | Fiscal, Laboral y Contable",
+      "descripcion": "Asesoría fiscal, laboral y contable en Laguardia (Álava). Ayudamos a autónomos y empresas. Contacta con expertos desde 2013."
+    },
+    {
+      "ruta": "servicios",
+      "titulo": "Servicios: fiscal, laboral, contable y gestoría | Argomaniz y García",
+      "descripcion": "Impuestos, nóminas y Seguridad Social, contabilidad, sociedades, trámites con Hacienda Foral y diseño web. Para autónomos y empresas de la Rioja Alavesa.",
+      "imagen": "/fotos/photo-1562564055-71e051d33c19.webp"
+    },
+    {
+      "ruta": "quienes-somos",
+      "titulo": "Quiénes somos | Argomaniz y García Asesores, Laguardia",
+      "descripcion": "Asesoría en el centro de Laguardia desde 2013. Conoce cómo trabajamos con autónomos y empresas de la Rioja Alavesa.",
+      "imagen": "/fotos/photo-1765020553734-2c050ddb9494.webp"
+    },
+    {
+      "ruta": "clientes",
+      "titulo": "Clientes: bodegas, comercio, hostelería y autónomos | Argomaniz y García",
+      "descripcion": "Trabajamos con bodegas y viñedos, comercios, hostelería y casas rurales, autónomos y empresas de la Rioja Alavesa.",
+      "imagen": "/fotos/photo-1660815312830-7cb4e23547a8.webp"
+    },
+    {
+      "ruta": "contacto",
+      "titulo": "Contacto y horario | Argomaniz y García Asesores, Laguardia",
+      "descripcion": "Calle Mayor 55, 1.º, Laguardia. Teléfonos 945 600 676 y 629 125 142, info@ayg-asesores.com. De lunes a viernes, de 8:00 a 16:00.",
+      "imagen": "/fotos/photo-1765020553734-2c050ddb9494.webp"
+    },
+    {
+      "ruta": "deca",
+      "titulo": "DeCA: el documento de control del transporte ya es digital | Argomaniz y García",
+      "descripcion": "Desde el 5 de octubre de 2026 hay que llevar a bordo el documento de control administrativo (DeCA) en formato electrónico. Te explicamos qué cambia, cómo se controla en carretera y cómo cumplirlo.",
+      "imagen": "/fotos/deca-carretera.webp",
+      "tipo": "article"
+    }
+  ]
+}

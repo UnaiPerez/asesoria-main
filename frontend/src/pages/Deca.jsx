@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Truck, QrCode, Smartphone, FileCheck, AlertTriangle, Phone, Mail,
@@ -25,15 +25,6 @@ import { Card, CardContent } from '../components/ui/card';
  *    Cuando esté confirmada, se añade en el bloque de la infracción.
  */
 export const Deca = () => {
-  // Al llegar desde el menú, el título de la pestaña se quedaba con el de la
-  // web. Quien entra directo por el enlace ya recibe el bueno, porque al
-  // compilar se genera una portada propia (scripts/portadas-para-compartir.js).
-  useEffect(() => {
-    const anterior = document.title;
-    document.title = 'El documento de control del transporte pasa a ser digital | Argomaniz y García';
-    return () => { document.title = anterior; };
-  }, []);
-
   const telefono = '629125142';
   const correo = 'p.perez@ayg-asesores.com';
 
@@ -120,7 +111,7 @@ export const Deca = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-none">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center shadow-lg">
                 <HelpCircle className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -135,7 +126,7 @@ export const Deca = () => {
                 sabrás si tienes que cumplirlo y desde cuándo.
               </p>
               <a href={`tel:${telefono}`}>
-                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl transition-all duration-300">
                   <Phone className="mr-2 w-5 h-5" />
                   629 125 142
                 </Button>
@@ -160,9 +151,9 @@ export const Deca = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {comoSeControla.map((paso, i) => (
-              <Card key={i} className="group hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2">
+              <Card key={i} className="group hover:shadow-2xl transition-all duration-500 border-0">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 shadow-lg">
                     <paso.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{paso.titulo}</h3>
@@ -195,12 +186,9 @@ export const Deca = () => {
 
       {/* ------------------------------------------------ nuestra herramienta */}
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-slate-500"></div>
-        </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mb-8 shadow-lg">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center mb-8 shadow-lg">
             <Truck className="w-8 h-8 text-white" />
           </div>
 
@@ -250,13 +238,13 @@ export const Deca = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a href={`https://wa.me/34${telefono}`} target="_blank" rel="noreferrer">
-              <Button size="lg" className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+              <Button size="lg" className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300">
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Escríbenos por WhatsApp
               </Button>
             </a>
             <a href={`mailto:${correo}?subject=${encodeURIComponent('Información sobre el DeCA')}`}>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300">
                 <Mail className="mr-2 w-5 h-5" />
                 Mándanos un correo
               </Button>

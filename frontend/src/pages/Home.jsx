@@ -10,43 +10,36 @@ export const Home = () => {
       icon: Calculator,
       title: 'Asesoramiento Fiscal',
       description: 'IRPF, IVA, Impuesto de Sociedades y planificación fiscal personalizada.',
-      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Users,
       title: 'Asesoramiento Laboral',
       description: 'Gestión de nóminas, contratos, Seguridad Social y asesoramiento en RRHH.',
-      color: 'from-amber-500 to-amber-600'
     },
     {
       icon: FileText,
       title: 'Asesoramiento Contable',
       description: 'Contabilidad, cierres contables, libros oficiales y cuentas anuales.',
-      color: 'from-slate-500 to-slate-600'
     },
     {
       icon: Scale,
       title: 'Asesoramiento Legal',
       description: 'Constitución de sociedades, contratos mercantiles y asesoramiento jurídico.',
-      color: 'from-emerald-500 to-emerald-600'
     },
     {
       icon: Building,
       title: 'Gestion Administrativa',
       description: 'Trámites con Hacienda, Gestiones con la Seguridad Social',
-      color: 'from-purple-500 to-purple-600'
     },
     {
       icon: Monitor,
       title: 'Diseño Web',
       description: 'Diseño y desarrollo de páginas web modernas, adaptados a móviles y tablets',
-      color: 'from-red-500 to-red-600'
     },
     {
       icon: Truck,
       title: 'DeCA Transporte',
       description: 'El documento de control del transporte, obligatoriamente digital desde el 5 de octubre de 2026.',
-      color: 'from-amber-500 to-amber-600',
       to: '/deca'
     }
   ];
@@ -97,35 +90,30 @@ export const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contacto">
-                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300">
                   Contacta con Nosotros
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/servicios">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300">
                   Ver Servicios
                 </Button>
               </Link>
               <Link to="https://confirmafy.com/argomanizygarcia">
-                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300">
                   Pide tu cita
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white rounded-full"></div>
-          </div>
-        </div>
       </section>
 
       {/* Aviso del DeCA. Va aquí arriba y no como una tarjeta más porque es un
-          aviso con fecha de caducidad: el 5 de octubre de 2026. Cuando pase,
+          aviso con fecha de caducidad. Pasado el 5 de octubre de 2026 se dejó
+          hasta final de noviembre, cambiado de «va a ser obligatorio» a «ya lo
+          es»: son las semanas en que más empresas buscan cómo cumplir. Después
           se quita de aquí y se queda solo la tarjeta de servicio. */}
       <section className="bg-amber-500">
         <Link
@@ -137,9 +125,9 @@ export const Home = () => {
               <CalendarClock className="w-6 h-6 text-amber-400" />
             </div>
             <p className="flex-1 text-slate-900 text-base md:text-lg leading-snug">
-              <strong className="font-bold">Transportistas: desde el 5 de octubre de 2026,
-              el documento de control va obligatoriamente en digital.</strong>{' '}
-              Te explicamos qué cambia y cómo cumplirlo.
+              <strong className="font-bold">Transportistas: el documento de control ya es
+              obligatorio en digital.</strong>{' '}
+              Te lo dejamos resuelto con nuestra aplicación, TransGap.
             </p>
             <span className="flex-none inline-flex items-center gap-2 font-bold text-slate-900 group-hover:gap-3 transition-all">
               Más información
@@ -151,14 +139,11 @@ export const Home = () => {
 
       {/* Stats Section */}
       <section className="py-16 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-slate-500"></div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">
                   {stat.number}
                 </div>
                 <div className="text-slate-300 font-medium">{stat.label}</div>
@@ -184,10 +169,10 @@ export const Home = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2"
+                className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden"
               >
                 <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 shadow-lg`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">
@@ -234,7 +219,7 @@ export const Home = () => {
               <div className="grid grid-cols-1 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3 group">
-                    <CheckCircle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                    <CheckCircle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
                     <span className="text-slate-700 text-lg">{benefit}</span>
                   </div>
                 ))}
@@ -274,7 +259,7 @@ export const Home = () => {
             Contáctanos sin compromiso. Estaremos encantados de ayudarte con tu negocio o tus necesidades personales.
           </p>
           <Link to="/contacto">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-7 text-xl font-bold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-7 text-xl font-bold rounded-xl shadow-2xl transition-all duration-300">
               Contáctanos
               <ArrowRight className="ml-3 w-6 h-6" />
             </Button>

@@ -34,14 +34,17 @@ export const Header = () => {
       {/* Top bar with contact info */}
       <div className="bg-slate-900 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
+          {/* Los números se ven también en el móvil: antes se escondían y
+              quedaban el icono y una «/» suelta, justo en la pantalla desde la
+              que más se llama. El correo sí se queda en icono, no cabe. */}
+          <div className="flex items-center gap-3 sm:gap-4">
             <a href="tel:945600676" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">945 600 676</span>
+              <span>945 600 676</span>
             </a>
-            /
+            <span aria-hidden="true">/</span>
             <a href="tel:629125142" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
-              <span className="hidden sm:inline">629 125 142</span>
+              <span>629 125 142</span>
             </a>
             <a href="mailto:info@ayg-asesores.com" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Mail className="w-4 h-4" />

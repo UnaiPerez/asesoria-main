@@ -44,7 +44,7 @@ export const Contacto = () => {
                 <Card className="border-2 border-slate-200 hover:border-amber-400 transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-amber-500 flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -62,16 +62,16 @@ export const Contacto = () => {
                 <Card className="border-2 border-slate-200 hover:border-amber-400 transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-slate-900 flex items-center justify-center flex-shrink-0">
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-900 mb-2">Teléfono</h3>
-                        <a href="tel:945600676" className="text-lg text-blue-600 hover:text-blue-700 font-semibold mr-[5px]">
+                        <a href="tel:945600676" className="text-lg text-amber-700 hover:text-amber-800 font-semibold mr-[5px]">
                           945 600 676
                         </a>
                         /
-                        <a href="tel:629125142" className="text-lg text-blue-600 hover:text-blue-700 font-semibold ml-[5px]">
+                        <a href="tel:629125142" className="text-lg text-amber-700 hover:text-amber-800 font-semibold ml-[5px]">
                           629 125 142
                         </a>
                         
@@ -86,12 +86,12 @@ export const Contacto = () => {
                 <Card className="border-2 border-slate-200 hover:border-amber-400 transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-slate-900 flex items-center justify-center flex-shrink-0">
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-900 mb-2">Email</h3>
-                        <a href="mailto:info@ayg-asesores.com" className="text-lg text-emerald-600 hover:text-emerald-700 font-semibold">
+                        <a href="mailto:info@ayg-asesores.com" className="text-lg text-amber-700 hover:text-amber-800 font-semibold">
                           info@ayg-asesores.com
                         </a>
                         <p className="text-sm text-slate-600 mt-1">
@@ -105,7 +105,7 @@ export const Contacto = () => {
                 <Card className="border-2 border-slate-200 hover:border-amber-400 transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-slate-900 flex items-center justify-center flex-shrink-0">
                         <Clock className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -136,7 +136,9 @@ export const Contacto = () => {
                       // Búsqueda por la dirección, no por coordenadas: el mapa
                       // anterior llevaba un identificador inventado por la
                       // plantilla. Esta forma no necesita clave de Google.
-                      src="https://www.google.com/maps?q=Calle+Mayor+55,+01300+Laguardia,+%C3%81lava&z=17&output=embed"
+                      // Va como la escribe Google («Mayor Kalea… Araba»): con
+                      // «Calle Mayor… Álava» ponía el marcador en otro pueblo.
+                      src="https://www.google.com/maps?q=Mayor+Kalea,+55,+01300+Laguardia,+Araba,+Espa%C3%B1a&z=17&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -168,19 +170,19 @@ export const Contacto = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:945600676">
-              <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+              <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 flex items-center gap-3">
                 <Phone className="w-5 h-5" />
                 Llamar Ahora
               </button>
             </a>
             <a href="mailto:info@ayg-asesores.com">
-              <button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
+              <button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 flex items-center gap-3">
                 <Send className="w-5 h-5" />
                 Enviar Email
               </button>
             </a>
             <a href="https://confirmafy.com/argomanizygarcia">
-              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl transition-all duration-300 flex items-center gap-3">
                 <CalendarClock  className="w-5 h-5" />
                 Coge tu cita
               </button>

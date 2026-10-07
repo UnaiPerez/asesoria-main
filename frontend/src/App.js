@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { SubirAlCambiarDePagina } from "./components/SubirAlCambiarDePagina";
+import { TituloDePagina } from "./components/TituloDePagina";
+import { BotonWhatsApp } from "./components/BotonWhatsApp";
 import { Home } from "./pages/Home";
 import { QuienesSomos } from "./pages/QuienesSomos";
 import { Servicios } from "./pages/Servicios";
@@ -29,6 +31,8 @@ function App() {
           <Route path="*" element={<NoEncontrado />} />
         </Routes>
         <Footer />
+        <TituloDePagina />
+        <BotonWhatsApp />
       </BrowserRouter>
     </div>
   );

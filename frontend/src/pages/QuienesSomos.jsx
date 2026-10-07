@@ -138,10 +138,10 @@ export const QuienesSomos = () => {
             {values.map((value, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2"
+                className="group hover:shadow-2xl transition-all duration-500 border-0"
               >
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-amber-500 flex items-center justify-center mb-6 shadow-lg">
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">
@@ -177,7 +177,7 @@ export const QuienesSomos = () => {
                   }
                 >
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-slate-900 flex items-center justify-center mb-4">
                     <Users className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">

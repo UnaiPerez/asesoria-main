@@ -110,10 +110,10 @@ export const Clientes = () => {
             {sectors.map((sector, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2"
+                className="group hover:shadow-2xl transition-all duration-500 border-0"
               >
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center mb-6 shadow-lg">
                     <sector.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">

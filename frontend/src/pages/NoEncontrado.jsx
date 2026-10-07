@@ -37,7 +37,7 @@ export const NoEncontrado = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link to="/">
-            <Button size="lg" className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl transition-all duration-300">
               <Home className="mr-2 w-5 h-5" />
               Ir a la portada
             </Button>
